@@ -221,9 +221,9 @@
                 {
                     "data": function (row) {
                         if (row.companyname) {
-                            return "<a href='/customer/view/"+row.id+"'>"+row.name+"</a>"+"->"+"<a href='/customer/view/"+row.companyid+"'>"+row.companyname+"</a>"
+                            return "<a class='btn btn-success btn-sm' style='margin-right: 20px;width: 60px' href='/customer/view/"+row.id+"'>"+row.name+"</a>"+"<a href='/customer/view/"+row.companyid+"'>"+row.companyname+"</a>"
                         }
-                        return "<a href='/customer/view/"+row.id+"'>"+row.name+"</a>";
+                        return "<a class='btn btn-success btn-sm' href='/customer/view/"+row.id+"'>"+row.name+"</a>";
                     }
                 },
                 {"data": "tel"},

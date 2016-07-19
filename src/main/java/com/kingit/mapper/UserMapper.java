@@ -26,4 +26,6 @@ public interface UserMapper {
     void delUser(Integer id);
 
     List<User> findAll();
+
+    List<User> findUserList();
 }

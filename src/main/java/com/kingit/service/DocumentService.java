@@ -45,23 +45,24 @@ public class DocumentService {
         return documentMapper.findList();
     }
 
-    public List<Document> findByFid(Integer fid){
+    public List<Document> findByFid(Integer fid) {
         return documentMapper.findByFid(fid);
     }
 
     /**
      * 上传文件并保存到指定目录,把把结果记录给数据库
+     *
      * @param inputStream
      * @param originFileName
-     * @param fid 父id
+     * @param fid            父id
      * @param contentType
      * @param size
      */
     @Transactional
-    public void saveFile(InputStream inputStream, String originFileName, Integer fid,String contentType,long size) {
+    public void saveFile(InputStream inputStream, String originFileName, Integer fid, String contentType, long size) {
         String extName = "";
-       File file = new File("E:/image/pic");
-        if (!file.exists() && !file.isDirectory()){
+        File file = new File("E:/image/pic");
+        if (!file.exists() && !file.isDirectory()) {
             file.mkdir();
         }
         if (originFileName.contains(".")) ;
@@ -69,10 +70,10 @@ public class DocumentService {
             extName = originFileName.substring(originFileName.lastIndexOf("."));
         }
 
-        String newFileName = UUID.randomUUID().toString()+extName;//获取本地文件名
+        String newFileName = UUID.randomUUID().toString() + extName;//获取本地文件名
         try {
-            FileOutputStream outputStream = new FileOutputStream(new File(savePath,newFileName));
-            IOUtils.copy(inputStream,outputStream);
+            FileOutputStream outputStream = new FileOutputStream(new File(savePath, newFileName));
+            IOUtils.copy(inputStream, outputStream);
             outputStream.flush();
             outputStream.close();
             inputStream.close();

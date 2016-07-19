@@ -22,7 +22,7 @@ public interface CustomerMapper {
     long findCountByUserid(@Param("userid") Integer userid);
     long count();
 
-    List<Customer> findCompanyList();
+    List<Customer> findCompanyList(@Param("userid") Integer userid);
 
     List<Customer> findByCompanyId(@Param("companyid") Integer companyid);
 }

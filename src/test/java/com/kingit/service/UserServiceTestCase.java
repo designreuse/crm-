@@ -7,6 +7,7 @@ import com.kingit.pojo.Role;
 import com.kingit.pojo.User;
 import com.kingit.utils.Md5Util;
 import com.kingit.utils.ShiroUtil;
+import com.kingit.utils.SqlUtil;
 import org.joda.time.DateTime;
 import org.junit.Assert;
 import org.junit.Test;
@@ -112,8 +113,29 @@ public class UserServiceTestCase {
     }
 
     @Test
-    public void getCompanyNameById(){
+    public void getCompanyNameById() {
         System.out.println(userService.findAll());
 
+    }
+
+    @Test
+    public void testSaveSql() {
+        String a = SqlUtil.save("id", "name", "password", "email");
+        System.out.println(a);
+        System.out.println("================");
+    }
+
+    @Test
+    public void testUpdateSql() {
+        String a = SqlUtil.update("source","name", "password", "email", "address","filename");
+        System.out.println(a);
+        System.out.println("================");
+    }
+
+    @Test
+    public void testSetUpdateSql() {
+        String a = SqlUtil.setUpdate("name", "price", "custname", "progress","lasttime", "username", "successtime", "userid", "custid");
+        System.out.println(a);
+        System.out.println("==============");
     }
 }

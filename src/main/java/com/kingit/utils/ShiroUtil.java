@@ -1,6 +1,5 @@
 package com.kingit.utils;
 
-import com.kingit.pojo.Role;
 import com.kingit.pojo.User;
 import org.apache.shiro.SecurityUtils;
 
@@ -9,15 +8,8 @@ import org.apache.shiro.SecurityUtils;
  */
 public class ShiroUtil {
     public static User getCurrentUser(){
-        //SecurityUtils.getSubject().getPrincipal()获取当前捕获对象
+        //获取当前捕获对象
         User user= (User) SecurityUtils.getSubject().getPrincipal();
-        if (user.getRoleid()==1){
-            user.setRole(new Role(1,"管理员"));
-        }else if (user.getRoleid()==2){
-            user.setRole(new Role(2,"经理"));
-        }else {
-            user.setRole(new Role(3,"员工"));
-        }
         return user;
     }
     public static Integer getCurrentUserId(){

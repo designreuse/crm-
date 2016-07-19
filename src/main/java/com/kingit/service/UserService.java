@@ -98,4 +98,8 @@ public class UserService {
     public List<User> findAll() {
         return userMapper.findAll();
     }
+
+    public List<User> findUserList() {
+        return userMapper.findUserList();
+    }
 }
