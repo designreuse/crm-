@@ -61,4 +61,9 @@ public class TodoService {
         todo.setDone(false);
         todoMapper.save(todo);
     }
+
+    public List<Todo> findTodoListByCuid(Integer cuid) {
+        return todoMapper.findTodoListByCuid(ShiroUtil.getCurrentUserId(),cuid);
+
+    }
 }

@@ -38,7 +38,7 @@
                 <li class="${param.menu=='notice'?'active':''}"><a href="/notice/list"><i class="fa fa-bullhorn"></i> <span>公告</span></a></li>
                 <li class="${param.menu=='sale'?'active':''}"><a href="/sale/list"><i class="fa fa-building-o"></i> <span>销售机会</span></a></li>
                 <li class="${param.menu=='customer'?'active':''}"><a href="/customer/list"><i class="fa fa-users"></i> <span>客户管理</span></a></li>
-                <li class="${param.menu=='count'?'active':''}"><a href="#"><i class="fa fa-bar-chart"></i> <span>统计</span></a></li>
+                <li class="${param.menu=='count'?'active':''}"><a href="/count/list"><i class="fa fa-bar-chart"></i> <span>统计</span></a></li>
                 <li class="${param.menu=='todolist'?'active':''}"><a href="/todo/list"><i class="fa fa-calendar-o"></i> <span>待办事项</span></a></li>
                 <li class="${param.menu=='doc'?'active':''}"><a href="/doc"><i class="fa fa-file"></i> <span>文档管理</span></a></li>
 

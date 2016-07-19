@@ -8,6 +8,7 @@ import com.google.zxing.WriterException;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.kingit.dto.DatatableResult;
+import com.kingit.dto.JSONResult;
 import com.kingit.exception.ForbiddenException;
 import com.kingit.exception.NotFoundException;
 import com.kingit.pojo.Customer;
@@ -212,6 +213,13 @@ public class CustomerController {
     public String newTodo(Todo todo,String hour,String minute){
         todoService.saveCustomTodo(todo,hour,minute);
         return "redirect:/customer/view/"+todo.getCustid();
+    }
+
+    @RequestMapping(value = "/todolist/{cuid:\\d+}",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONResult todoListLoad(@PathVariable("cuid") Integer cuid){
+        List<Todo> todoList = todoService.findTodoListByCuid(cuid);
+        return new JSONResult(todoList);
     }
 
 

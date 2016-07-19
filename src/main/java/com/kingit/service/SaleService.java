@@ -66,20 +66,21 @@ public class SaleService {
 
     @Transactional
     public void editSale(Sale sale, String progress, String editType) {
+
         String oldProgress = sale.getProgress();
         String newProgress = progress;
-        sale.setProgress(newProgress);
+
+        String content = "新增进度:" + newProgress;
+        if (editType.equals("hand")) {
+            content = "手动修改进度为:" + progress;
+        }else {
+            sale.setProgress(newProgress);
+        }
         if (newProgress.equals("完成交易")) {
             sale.setSuccesstime(DateTime.now().toString("yyyy-MM-dd"));
         }
         sale.setLasttime(DateTime.now().toString("yyyy-MM-dd HH:mm:ss"));
         saleMapper.update(sale);
-
-        String content = "将进程:" + oldProgress + "修改为" + newProgress;
-
-        if (editType.equals("hand")) {
-            content = "手动修改进程为:" + progress;
-        }
         saleLogMapper.save(new SaleLog(content, editType, sale.getId()));
     }
 

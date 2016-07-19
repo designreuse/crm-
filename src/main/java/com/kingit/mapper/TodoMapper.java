@@ -18,4 +18,6 @@ public interface TodoMapper {
     List<Todo> findByParam(Map<String,Object> param);
 
     List<Todo> findTimeOutList(@Param("userid") Integer currentUserId,@Param("nowtime") String nowtime);
+
+    List<Todo> findTodoListByCuid(@Param("userid") Integer currentUserId,@Param("cuid") Integer cuid);
 }

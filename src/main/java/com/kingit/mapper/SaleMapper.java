@@ -1,6 +1,7 @@
 package com.kingit.mapper;
 
 import com.kingit.pojo.Sale;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Map;
@@ -22,4 +23,9 @@ public interface SaleMapper {
     Long totalCount();
 
     void delSale(Integer id);
+
+
+    List<Map<String,Object>> getCountProgress(@Param("start") String start,@Param("end") String end);
+
+    List<Map<String,Object>> loadSales(@Param("start")String start,@Param("end") String end);
 }

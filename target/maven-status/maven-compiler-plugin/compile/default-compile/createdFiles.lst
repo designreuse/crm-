@@ -1,7 +1,8 @@
-com\kingit\pojo\User.class
 com\kingit\service\DocumentService.class
-com\kingit\pojo\Todo.class
+com\kingit\pojo\User.class
 com\kingit\service\SaleService.class
+com\kingit\pojo\Todo.class
+com\kingit\service\CountService.class
 com\kingit\dto\JSONResult.class
 com\kingit\pojo\Document.class
 com\kingit\pojo\Role.class
@@ -15,8 +16,8 @@ com\kingit\service\NoticeService.class
 com\kingit\pojo\Customer.class
 com\kingit\controller\CustomerController.class
 com\kingit\pojo\Salefile.class
-com\kingit\controller\ErrorController.class
 com\kingit\utils\ServletUtil.class
+com\kingit\controller\ErrorController.class
 com\kingit\exception\NotFoundException.class
 com\kingit\dto\DatatableResult.class
 com\kingit\controller\FilePreviewController.class
@@ -27,8 +28,8 @@ com\kingit\service\TodoService.class
 com\kingit\pojo\SaleLog.class
 com\kingit\pojo\Notice.class
 com\kingit\mapper\NoticeMapper.class
-com\kingit\pojo\Sale.class
 com\kingit\service\UserService.class
+com\kingit\pojo\Sale.class
 com\kingit\mapper\TodoMapper.class
 com\kingit\controller\SaleController.class
 com\kingit\mapper\RoleMapper.class
@@ -39,11 +40,12 @@ com\kingit\pojo\UserLog.class
 com\kingit\controller\HomeController.class
 com\kingit\utils\Strings.class
 com\kingit\mapper\SaleMapper.class
-com\kingit\controller\DocumentController.class
-com\kingit\controller\NoticeController.class
 com\kingit\mapper\SaleLogMapper.class
+com\kingit\controller\NoticeController.class
+com\kingit\controller\DocumentController.class
 com\kingit\mapper\SalefileMapper.class
 com\kingit\mapper\CustomerMapper.class
+com\kingit\controller\CountController.class
 com\kingit\service\ShiroRealm.class
 com\kingit\utils\Page.class
 com\kingit\controller\UserController.class

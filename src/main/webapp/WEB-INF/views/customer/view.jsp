@@ -143,21 +143,30 @@
                         </div>
                     </div>
 
-                    <div class="box box-default">
-                        <div class="box-header with-border">
+                    <div class="box box-default collapsed-box">
+                        <div class="box-header with-border ">
                             <h3 class="box-title"><i class="fa fa-calendar-check-o"></i> 代办事项</h3>
                             <div class="box-tools">
                                 <button class="btn btn-box-tool" id="newTodoBtn"
                                         data-toggle="tooltip"><i class="fa fa-list"></i>新增待办事项
                                 </button>
-                                <button class="btn btn-box-tool" id="timeoutBtn" data-widget="collapse"
+                                <button class="btn btn-box-tool" id="todolistBtn" data-widget="collapse"
                                         data-toggle="tooltip"><i class="fa fa-plus"></i></button>
                             </div>
                         </div>
 
-
-                        <div class="box-body">
-                            <h5>暂无代办事项</h5>
+                        <div class="box-body" style="text-align: center">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>事项</th>
+                                    <th>开始日期</th>
+                                    <th>结束日期</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tbody">
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -349,6 +358,21 @@
         })
         $("#todo_color").colorpicker({
             color: "#61a5e8"
+        })
+
+        $("#todolistBtn").click(function(){
+            $.get("/customer/todolist/"+${customer.id}).done(function(result){
+                $("#tbody").html("");
+                var todolist = result.data;
+                if (result.state=="success"&&todolist.length){
+                    for (var i=0;i<todolist.length;i++){
+                        var trs = "<tr><td class='text-info'>"+todolist[i].title+"</td><td>"+todolist[i].start+"</td><td>"+todolist[i].end+"</td></tr>";
+                        $("#tbody").append(trs);
+                    }
+                }
+            }).fail(function(){
+                alert("服务器出错");
+            })
         })
     })
 </script>
